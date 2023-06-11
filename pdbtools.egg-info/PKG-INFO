@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: pdbtools
+Version: 0.1
+Summary: My own python library to visualize .pdb files in Python!
+Author: Doruk Alp Uzunarslan
+Author-email: duzunarslan27@my.uaa.k12.tr
+License: MIT

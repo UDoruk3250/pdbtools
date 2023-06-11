@@ -1,0 +1,8 @@
+setup.py
+pdbtools/__init__.py
+pdbtools/pdbtool.py
+pdbtools.egg-info/PKG-INFO
+pdbtools.egg-info/SOURCES.txt
+pdbtools.egg-info/dependency_links.txt
+pdbtools.egg-info/not-zip-safe
+pdbtools.egg-info/top_level.txt
