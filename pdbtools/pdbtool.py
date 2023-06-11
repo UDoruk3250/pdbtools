@@ -4,17 +4,27 @@ class MoleculeStructure:
         self.atomlist = []
 
     def importMolecule(self,file=""):
-        try:
-            with open(file) as f:
-                liste=[]
-                liste = list(f.read().split("\n"))
-                for atom in liste:
-                    self.atomlist.append(list(atom.split(" ")))
-        except FileNotFoundError:
-            raise FileNotFoundError
-
+        if not file.endswith(".pdb"):
+            raise InvalidFileException
+        else:
+            try:
+                with open(file) as f:
+                    liste = list(f.read().split("\n"))
+                    for atom in liste:
+                        self.atomlist.append(list(atom.split(" ")))
+            except Exception:
+                raise IllegiblePDBFileException
 
     def getIndexAtom(self, index=0):
         if self.atomlist:
-            return self.atomlist[0]
+            return self.atomlist[index]
 
+
+class IllegiblePDBFileException(Exception):
+    """The .PDB file is illegible; may be corrupted. Check the file."""
+    pass
+
+
+class InvalidFileException(Exception):
+    """The file attempted to import is invalid."""
+    pass
