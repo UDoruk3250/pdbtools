@@ -6,6 +6,10 @@ class MoleculeStructure:
                             "SOURCE", "KEYWDS", "EXPDTA", "AUTHOR", "REVDAT", "JRNL  ", "SEQRES", "SEQADV", "DBREF ",
                             "HET   ", "HETNAM", "HETSYN", "FORMUL", "HELIX ", "SHEET ", "SSBOND", "LINK  ", "CISPEP",
                             "ORIGX1", "ORIGX2", "ORIGX3", "SCALE1", "SCALE2", "SCALE3", "ANISOU", "CONECT", "MASTER"]
+        self.aminoacids = {"ALA": "A", "ASX": "B", "CYS": "C", "ASP": "D", "GLU": "E", "PHE": "F", "GLY": "G",
+                           "HIS": "H", "ILE": "I", "LYS": "K", "LEU": "L", "MET": "M", "ASN": "N", "PRO": "P",
+                           "GLN": "Q", "ARG": "R", "SER": "S", "THR": "T", "VAL": "V", "TRP": "W","TYR": "Y",
+                           "GLX": "Z"}
 
     def importMolecule(self, file=""):
         if not file.endswith(".pdb"):
@@ -32,6 +36,23 @@ class MoleculeStructure:
     def getIndexAtom(self, index=0):
         if self.atomlist:
             return self.atomlist[index]
+
+    def PDB2FASTA(self):
+        fasta = ""
+        chain = ""
+        for line in self.atomlist:
+            if line[0] == "SEQRES":
+                if line[2] != chain:
+                    chain = line[2]
+                    fasta += "\n"
+                    fasta += "> Chain " + chain + ": \n  "
+
+                for acid in line[4:]:
+                    fasta += self.aminoacids.get(str(acid))
+
+
+
+        return fasta
 
 
 class IllegiblePDBFileException(Exception):
