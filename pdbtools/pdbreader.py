@@ -8,7 +8,7 @@ class MoleculeStructure:
                             "ORIGX1", "ORIGX2", "ORIGX3", "SCALE1", "SCALE2", "SCALE3", "ANISOU", "CONECT", "MASTER"]
         self.aminoacids = {"ALA": "A", "ASX": "B", "CYS": "C", "ASP": "D", "GLU": "E", "PHE": "F", "GLY": "G",
                            "HIS": "H", "ILE": "I", "LYS": "K", "LEU": "L", "MET": "M", "ASN": "N", "PRO": "P",
-                           "GLN": "Q", "ARG": "R", "SER": "S", "THR": "T", "VAL": "V", "TRP": "W","TYR": "Y",
+                           "GLN": "Q", "ARG": "R", "SER": "S", "THR": "T", "VAL": "V", "TRP": "W", "TYR": "Y",
                            "GLX": "Z"}
 
     def importMolecule(self, file=""):
@@ -35,7 +35,19 @@ class MoleculeStructure:
 
     def getIndexAtom(self, index=0):
         if self.atomlist:
-            return self.atomlist[index]
+            a = 0
+            s = 0
+            while s<index:
+                if self.atomlist[a][0] == "ATOM":
+
+                    s += 1
+                a += 1
+
+        else:
+            raise NoSourceFileProvidedException
+
+        return self.atomlist[a]
+
 
     def PDB2FASTA(self):
         fasta = ""
@@ -50,8 +62,6 @@ class MoleculeStructure:
                 for acid in line[4:]:
                     fasta += self.aminoacids.get(str(acid))
 
-
-
         return fasta
 
 
@@ -62,6 +72,12 @@ class IllegiblePDBFileException(Exception):
     """The .PDB file is illegible; may be corrupted. Check the file.")"""
     pass
 
+class NoSourceFileProvidedException(Exception):
+    def __init__(self, msg="No .PDB file has been provided. Check if you are using the importMolecule() method."):
+        super().__init__(msg)
+
+    """No .PDB file has been provided. Check if you are using the importMolecule() method."""
+    pass
 
 class InvalidFileException(Exception):
     def __init__(self, msg="The file attempted to import is invalid."):

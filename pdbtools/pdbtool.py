@@ -1,7 +1,10 @@
 # class MoleculeStructure:
 #     def __init__(self):
 #         self.atomlist = []
-#         self.commandlist = ["HEADER", "ATOM", "TER", "END", "CRYST1", "TITLE", "REMARK", "HETATM", "COMPND", "SOURCE", "KEYWDS", "EXPDTA", "AUTHOR", "REVDAT", "JRNL", "SEQRES", "SEQADV", "DBREF", "HET", "HETNAM", "HETSYN", "FORMUL", "HELIX", "SHEET", "SSBOND", "LINK", "CISPEP", "ORIGX1", "ORIGX2", "ORIGX3", "SCALE1", "SCALE2", "SCALE3", "ANISOU", "CONECT", "MASTER"]
+#         self.commandlist = ["HEADER", "ATOM", "TER", "END", "CRYST1", "TITLE", "REMARK", "HETATM", "COMPND",
+#         "SOURCE", "KEYWDS", "EXPDTA", "AUTHOR", "REVDAT", "JRNL", "SEQRES", "SEQADV", "DBREF", "HET", "HETNAM",
+#         "HETSYN", "FORMUL", "HELIX", "SHEET", "SSBOND", "LINK", "CISPEP", "ORIGX1", "ORIGX2", "ORIGX3", "SCALE1",
+#         "SCALE2", "SCALE3", "ANISOU", "CONECT", "MASTER"]
 #
 #     def importMolecule(self,file=""):
 #         if not file.endswith(".pdb"):
