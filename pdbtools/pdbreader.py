@@ -37,9 +37,8 @@ class MoleculeStructure:
         if self.atomlist:
             a = 0
             s = 0
-            while s<index:
+            while s < index:
                 if self.atomlist[a][0] == "ATOM":
-
                     s += 1
                 a += 1
 
@@ -47,7 +46,6 @@ class MoleculeStructure:
             raise NoSourceFileProvidedException
 
         return self.atomlist[a]
-
 
     def PDB2FASTA(self):
         fasta = ""
@@ -72,12 +70,14 @@ class IllegiblePDBFileException(Exception):
     """The .PDB file is illegible; may be corrupted. Check the file.")"""
     pass
 
+
 class NoSourceFileProvidedException(Exception):
     def __init__(self, msg="No .PDB file has been provided. Check if you are using the importMolecule() method."):
         super().__init__(msg)
 
     """No .PDB file has been provided. Check if you are using the importMolecule() method."""
     pass
+
 
 class InvalidFileException(Exception):
     def __init__(self, msg="The file attempted to import is invalid."):
