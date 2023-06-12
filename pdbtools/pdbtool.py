@@ -1,4 +1,4 @@
-# class MoleculeStructure:
+# class PDBreader:
 #     def __init__(self):
 #         self.command = ""
 #         self.atomlist = []
