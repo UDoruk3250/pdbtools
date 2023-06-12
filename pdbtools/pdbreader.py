@@ -33,7 +33,7 @@ class MoleculeStructure:
             except Exception:
                 raise IllegiblePDBFileException
 
-    def getIndexAtom(self, index=0):
+    def getIndexAtom(self, index=1):
         if self.atomlist:
             a = 0
             s = 0
@@ -45,7 +45,7 @@ class MoleculeStructure:
         else:
             raise NoSourceFileProvidedException
 
-        return self.atomlist[a]
+        return self.atomlist[a-1]
 
     def PDB2FASTA(self):
         fasta = ""
