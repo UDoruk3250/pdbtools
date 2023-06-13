@@ -1,2 +1,3 @@
 *.pdb
 test.py
+*.fasta
