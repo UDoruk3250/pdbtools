@@ -78,7 +78,6 @@ class PDBreader:
                     if not line[5] == acidindex:
                         fasta += self.aminoacids.get(line[3])
 
-
         if output_file:
             if not os.path.exists(output_file):
                 if not output_file.endswith(".fasta"):

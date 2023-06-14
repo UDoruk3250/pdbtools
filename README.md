@@ -33,4 +33,3 @@ things simple and consize.
 > 
 > > <details><summary> pdbreader.py </summary> <ul> <li> importMolecule() <li>getIndexAtom() <li>PDB2FASTA()</li> </ul> </ul> </details>
 
-> 
