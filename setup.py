@@ -1,6 +1,5 @@
-from setuptools import *
+from setuptools import setup
 
-from setuptools import find_packages, setup
 setup(
     name='pdbtools',
     packages=['pdbtools'],
