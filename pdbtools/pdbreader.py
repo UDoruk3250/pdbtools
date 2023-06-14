@@ -1,3 +1,6 @@
+import os
+
+
 class PDBreader:
     def __init__(self):
         self.command = ""
@@ -35,6 +38,8 @@ class PDBreader:
                 raise IllegiblePDBFileException
 
     def getIndexAtom(self, index=1):
+        if index < 1:
+            raise ValueError
         if self.atomlist:
             a = 0
             s = 0
@@ -46,21 +51,42 @@ class PDBreader:
         else:
             raise NoSourceFileProvidedException
 
-        return self.atomlist[a-1]
+        return self.atomlist[a - 1]
 
-    def PDB2FASTA(self):
+    def PDB2FASTA(self, output_file=""):
         fasta = ""
         chain = ""
-        for line in self.atomlist:
-            if line[0] == "SEQRES":
-                if line[2] != chain:
-                    chain = line[2]
-                    fasta += "\n"
-                    fasta += "> Chain " + chain + ": \n  "
+        if any("SEQRES" in s for s in self.atomlist):
+            for line in self.atomlist:
+                if line[0] == "SEQRES":
+                    if line[2] != chain:
+                        chain = line[2]
+                        fasta += "\n"
+                        fasta += "> Chain " + chain + ": \n  "
 
-                for acid in line[4:]:
-                    fasta += self.aminoacids.get(str(acid))
+                    for acid in line[4:]:
+                        fasta += self.aminoacids.get(str(acid))
+        else:
+            for line in self.atomlist:
+                acidindex = -1
+                if line[0] == "ATOM":
+                    if not line[4] == chain:
+                        chain = line[4]
+                        fasta += "\n"
+                        fasta += "> Chain " + chain + ": \n  "
 
+                    if not line[5] == acidindex:
+                        fasta += self.aminoacids.get(line[3])
+
+
+        if output_file:
+            if not os.path.exists(output_file):
+                if not output_file.endswith(".fasta"):
+                    output_file = output_file + ".fasta"
+                with open(output_file, "w") as f:
+                    f.write(fasta)
+            else:
+                raise FileExistsError
         return fasta
 
 
