@@ -31,5 +31,5 @@ As this is my first python package, I tried to keep
 things simple and consize.
 >pdbtools
 > 
-> > <details><summary> pdbreader.py </summary> <ul> <li> importMolecule() <li>getIndexAtom() <li>PDB2FASTA()</li> </ul> </ul> </details>
+> > <details><summary> pdbreader.py </summary> <ul> <li> importMolecule() <li>getIndexAtom() <li>PDB2FASTA()</li> </ul> </details>
 
