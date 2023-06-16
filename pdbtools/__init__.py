@@ -1,5 +1,5 @@
 try:
-    from .pdbtool import *
-    from .pdbreader import *
+    from pdbtools.pdbtoolkit.pdbtool import *
+    from pdbtools.pdbtoolkit.pdbreader import *
 except Exception:
     raise ImportError
