@@ -1,3 +1,2 @@
-pdbtools~=0.1
 nglview~=3.0.5
 setuptools~=65.5.1
