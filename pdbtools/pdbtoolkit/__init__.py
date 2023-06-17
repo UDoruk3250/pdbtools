@@ -3,5 +3,5 @@ from pdbtools.pdbtoolkit.pdbreader import *
 from pdbtools.pdbtoolkit.pdbvisualizer import *
 
 
-class PDBtoolkit(PDBreader, Visualize):
+class PDBToolkit(PDBreader, Visualize):
     pass
