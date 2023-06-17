@@ -1,4 +1,5 @@
 import os
+import __init__
 
 
 class PDBreader:
