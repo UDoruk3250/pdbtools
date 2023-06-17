@@ -28,7 +28,7 @@ Then you should be ready to use this library.
 ***
 ## Structure:
 As this is my first python package, I tried to keep 
-things simple and consize.
+things simple and concise.
 >pdbtools
 > 
 > > <details><summary> pdbreader.py </summary> <ul> <li> importMolecule() <li>getIndexAtom() <li>PDB2FASTA()</li> </ul> </ul> </details>
