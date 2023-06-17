@@ -16,3 +16,4 @@ class Visualize(PDBreader):
 # class Visual(PDBreader):
 #     def __init__(self):
 #         super().__init__()
+
