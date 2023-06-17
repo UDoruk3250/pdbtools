@@ -1,10 +1,10 @@
 import os
-import __init__
 
 
 class PDBreader:
     def __init__(self):
         self.command = ""
+        self.name = ""
         self.atomlist = []
         self.commandlist = ["HEADER", "ATOM  ", "TER   ", "END   ", "CRYST1", "TITLE ", "REMARK", "HETATM", "COMPND",
                             "SOURCE", "KEYWDS", "EXPDTA", "AUTHOR", "REVDAT", "JRNL  ", "SEQRES", "SEQADV", "DBREF ",
@@ -20,6 +20,7 @@ class PDBreader:
         if not file.endswith(".pdb"):
             raise InvalidFileException
         else:
+            self.name = file[:-4]
             try:
                 with open(file) as f:
                     liste = list(f.read().split("\n"))

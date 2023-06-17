@@ -1,15 +1,11 @@
-from pdbtools.pdbtoolkit.pdbtool import *
-from pdbtools.pdbtoolkit.pdbreader import *
-from pdbtools.pdbtoolkit.pdbvisualizer import *
+try:
+    from pdbtools.pdbtoolkit.pdbreader import *
+    from pdbtools.pdbtoolkit.pdbvisualizer import *
+    from pdbtools.pdbtoolkit.pdbtool import *
+except Exception:
+    raise ImportError
 
 
-class PDBToolkit(PDBreader, Visualize):
-    try:
-        from pdbtools.pdbtoolkit.pdbreader import *
-        from pdbtools.pdbtoolkit.pdbvisualizer import *
-    except Exception:
-        raise ImportError
-
-
-class PDBToolkit(PDBreader):
+class PDBToolkit(Visualize):
     pass
+
