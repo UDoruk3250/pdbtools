@@ -1,7 +1,7 @@
 # PDBTOOLS
 
 ![Author](https://img.shields.io/badge/Author-UDoruk3250-brightgreen)
-![Version](https://img.shields.io/badge/Version-0.1.3-red)
+![Version](https://img.shields.io/badge/Version-0.1.4-red)
 
 A new python library to process .pdb files easier!
 

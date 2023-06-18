@@ -5,8 +5,8 @@ class PDBreader:
     def __init__(self):
         self.command = ""
         self.name = ""
+        self.filedir=""
         self.atomlist = []
-        self.name = ""
         self.commandlist = ["HEADER", "ATOM  ", "TER   ", "END   ", "CRYST1", "TITLE ", "REMARK", "HETATM", "COMPND",
                             "SOURCE", "KEYWDS", "EXPDTA", "AUTHOR", "REVDAT", "JRNL  ", "SEQRES", "SEQADV", "DBREF ",
                             "HET   ", "HETNAM", "HETSYN", "FORMUL", "HELIX ", "SHEET ", "SSBOND", "LINK  ", "CISPEP",
@@ -23,6 +23,7 @@ class PDBreader:
             raise InvalidFileException
         else:
             self.name = file[:-4]
+            self.filedir = file
             try:
                 with open(file) as f:
                     liste = list(f.read().split("\n"))
