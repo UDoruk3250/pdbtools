@@ -6,6 +6,7 @@ class PDBreader:
         self.command = ""
         self.name = ""
         self.atomlist = []
+        self.name = ""
         self.commandlist = ["HEADER", "ATOM  ", "TER   ", "END   ", "CRYST1", "TITLE ", "REMARK", "HETATM", "COMPND",
                             "SOURCE", "KEYWDS", "EXPDTA", "AUTHOR", "REVDAT", "JRNL  ", "SEQRES", "SEQADV", "DBREF ",
                             "HET   ", "HETNAM", "HETSYN", "FORMUL", "HELIX ", "SHEET ", "SSBOND", "LINK  ", "CISPEP",
@@ -17,6 +18,7 @@ class PDBreader:
                            "GLX": "Z"}
 
     def importMolecule(self, file=""):
+
         if not file.endswith(".pdb"):
             raise InvalidFileException
         else:
@@ -56,6 +58,7 @@ class PDBreader:
         return self.atomlist[a - 1]
 
     def PDB2FASTA(self, output_file=""):
+        print(self.name)
         fasta = ""
         chain = ""
         if any("SEQRES" in s for s in self.atomlist):

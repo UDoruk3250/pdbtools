@@ -8,7 +8,7 @@ A new python library to process .pdb files easier!
 * Reads, processes .pdb files and outputs the files easily and fast.
 
 
-* Send me an e-mail through [duzunarslan27@my.uaa.k12.tr](https://mail.google.com/mail/u/0/?ogbl#inbox) if you find anything wrong, deficit, or inadequate. I would be happy to help people. 
+* Send me an e-mail through [duzunarslan27@my.uaa.k12.tr](https://mail.google.com/mail/u/0/?ogbl#inbox) if you find anything wrong, deficient, or inadequate. I would be happy to help people. 
 
 
 ***
@@ -31,5 +31,5 @@ As this is my first python package, I tried to keep
 things simple and concise.
 >pdbtools
 > 
-> > <details><summary> pdbreader.py </summary> <ul> <li> importMolecule() <li>getIndexAtom() <li>PDB2FASTA()</li> </ul> </ul> </details>
+> > <details><summary> pdbreader.py </summary> <ul> <li> importMolecule() <li>getIndexAtom() <li>PDB2FASTA()</li> </ul> </details>
 
