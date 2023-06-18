@@ -4,6 +4,7 @@ import os
 class PDBreader:
     def __init__(self):
         self.command = ""
+        self.name = ""
         self.atomlist = []
         self.name = ""
         self.commandlist = ["HEADER", "ATOM  ", "TER   ", "END   ", "CRYST1", "TITLE ", "REMARK", "HETATM", "COMPND",
