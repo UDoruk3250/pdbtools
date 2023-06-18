@@ -1,6 +1,7 @@
 import os
 from .pdbreader import *
 import Bio
+
 try:
     import nglview as n
 except ModuleNotFoundError:
