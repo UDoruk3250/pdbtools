@@ -1,13 +1,14 @@
 # TODO: put different kind of definitions such as Aminoacid sequences, SMILES, and FASTA sequence meanings
 
-dna_to_pro = {'ATG': 'M', 'GCG': 'A', 'TCA': 'S', 'GAA': 'E', 'GGG': 'G', 'GGT': 'G', 'AAA': 'K', 'GAG': 'E',
-              'AAT': 'N', 'CTA': 'L', 'CAT': 'H', 'TCG': 'S', 'TAG': 'STOP', 'GTG': 'V', 'TAT': 'Y', 'CCT': 'P',
-              'ACT': 'T', 'TCC': 's', 'CAG': 'Q', 'CCA': 'P', 'TAA': 'STOP', 'AGA': 'R', 'ACG': 'T', 'CAA': 'Q',
-              'TGT': 'C', 'GCT': 'A', 'TTC': 'F', 'AGT': 'S', 'ATA': 'I', 'TTA': 'L', 'CCG': 'P', 'ATC': 'I',
-              'TTT': 'F', 'CGT': 'R', 'TGA': 'STOP', 'GTA': 'V', 'TCT': 'S', 'CAC': 'H', 'GTT': 'V', 'GAT': 'D',
-              'CGA': 'R', 'GGA': 'G', 'GTC': 'V', 'GGC': 'G', 'TGC': 'C', 'CTG': 'L', 'CTC': 'L', 'CGC': 'R',
-              'CGG': 'R', 'AAC': 'N', 'GCC': 'A', 'ATT': 'I', 'AGG': 'R', 'GAC': 'D', 'ACC': 'T', 'AGC': 'S',
-              'TAC': 'Y', 'ACA': 'T', 'AAG': 'K', 'GCA': 'A', 'TTG': 'L', 'CCC': 'P', 'CTT': 'L', 'TGG': 'W'}
+dna_to_pro = {'AAA': 'K', 'AAC': 'N', 'AAG': 'K', 'AAT': 'N', 'ACA': 'T', 'ACC': 'T', 'ACG': 'T', 'ACT': 'T',
+              'AGA': 'R', 'AGC': 'S', 'AGG': 'R', 'AGT': 'S', 'ATA': 'I', 'ATC': 'I', 'ATG': 'M', 'ATT': 'I',
+              'CAA': 'Q', 'CAC': 'H', 'CAG': 'Q', 'CAT': 'H', 'CCA': 'P', 'CCC': 'P', 'CCG': 'P', 'CCT': 'P',
+              'CGA': 'R', 'CGC': 'R', 'CGG': 'R', 'CGT': 'R', 'CTA': 'L', 'CTC': 'L', 'CTG': 'L', 'CTT': 'L',
+              'GAA': 'E', 'GAC': 'D', 'GAG': 'E', 'GAT': 'D', 'GCA': 'A', 'GCC': 'A', 'GCG': 'A', 'GCT': 'A',
+              'GGA': 'G', 'GGC': 'G', 'GGG': 'G', 'GGT': 'G', 'GTA': 'V', 'GTC': 'V', 'GTG': 'V', 'GTT': 'V',
+              'TAA': 'STOP', 'TAC': 'Y', 'TAG': 'STOP', 'TAT': 'Y', 'TCA': 'S', 'TCC': 's', 'TCG': 'S', 'TCT': 'S',
+              'TGA': 'STOP', 'TGC': 'C', 'TGG': 'W', 'TGT': 'C', 'TTA': 'L', 'TTC': 'F', 'TTG': 'L', 'TTT': 'F'
+              }
 
 # while start + 2 < len(DNA):
 #         codon = DNA[start:start + 3]
