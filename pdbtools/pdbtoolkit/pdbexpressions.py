@@ -10,7 +10,6 @@ dna_to_pro = {'AAA': 'K', 'AAC': 'N', 'AAG': 'K', 'AAT': 'N', 'ACA': 'T', 'ACC':
               'TGA': 'STOP', 'TGC': 'C', 'TGG': 'W', 'TGT': 'C', 'TTA': 'L', 'TTC': 'F', 'TTG': 'L', 'TTT': 'F'
               }
 
-print("sdasdasd")
 # while start + 2 < len(DNA):
 #         codon = DNA[start:start + 3]
 #         protein.append(dna_to_pro[codon])
