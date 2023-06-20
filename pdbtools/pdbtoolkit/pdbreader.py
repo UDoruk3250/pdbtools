@@ -1,21 +1,13 @@
 import os
+from pdbtools.pdbtoolkit.pdbexpressions import *
 
 
 class PDBreader:
     def __init__(self):
         self.command = ""
         self.name = ""
-        self.filedir=""
+        self.filedir = ""
         self.atomlist = []
-        self.commandlist = ["HEADER", "ATOM  ", "TER   ", "END   ", "CRYST1", "TITLE ", "REMARK", "HETATM", "COMPND",
-                            "SOURCE", "KEYWDS", "EXPDTA", "AUTHOR", "REVDAT", "JRNL  ", "SEQRES", "SEQADV", "DBREF ",
-                            "HET   ", "HETNAM", "HETSYN", "FORMUL", "HELIX ", "SHEET ", "SSBOND", "LINK  ", "CISPEP",
-                            "ORIGX1", "ORIGX2", "ORIGX3", "SCALE1", "SCALE2", "SCALE3", "ANISOU", "CONECT", "MASTER"]
-
-        self.aminoacids = {"ALA": "A", "ASX": "B", "CYS": "C", "ASP": "D", "GLU": "E", "PHE": "F", "GLY": "G",
-                           "HIS": "H", "ILE": "I", "LYS": "K", "LEU": "L", "MET": "M", "ASN": "N", "PRO": "P",
-                           "GLN": "Q", "ARG": "R", "SER": "S", "THR": "T", "VAL": "V", "TRP": "W", "TYR": "Y",
-                           "GLX": "Z"}
 
     def importMolecule(self, file=""):
 
@@ -71,7 +63,7 @@ class PDBreader:
                         fasta += "> Chain " + chain + ": \n  "
 
                     for acid in line[4:]:
-                        fasta += self.aminoacids.get(str(acid))
+                        fasta += aminoacids.get(str(acid))
         else:
             for line in self.atomlist:
                 acidindex = -1
@@ -82,7 +74,7 @@ class PDBreader:
                         fasta += "> Chain " + chain + ": \n  "
 
                     if not line[5] == acidindex:
-                        fasta += self.aminoacids.get(line[3])
+                        fasta += aminoacids.get(line[3])
 
         if output_file:
             if not os.path.exists(output_file):
