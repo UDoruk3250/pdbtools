@@ -8,7 +8,7 @@ except ModuleNotFoundError:
 
 
 class Visualizer(PDBreader):
-    def show(self)o
+    def show(self):
         print(self.name)
         # print(name.upper())
         n.show_url("https://swissmodel.expasy.org/templates/"+self.name.upper())
