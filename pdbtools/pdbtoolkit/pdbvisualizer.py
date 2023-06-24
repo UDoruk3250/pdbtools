@@ -7,7 +7,6 @@ except ModuleNotFoundError:
     os.system("pip install nglview")
 
 
-
 class Visualizer(PDBreader):
     def show(self):
         print(self.name)
